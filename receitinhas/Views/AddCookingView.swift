@@ -70,40 +70,12 @@ class AddCookingView: UIViewController, ContainerImagePickerDelegate {
     }
     
     @objc func createCooking() {
-        
-        let buscar = true;
-        struct Person: Codable {
-            var name: String
-            var age: Int
+        if let title = titleTextfieldView.text, let description = descriptionTextfieldView.text {
+            let food = FoodRecipe(name: title, description: description, photo: "1")
+            CookingLocalStorage.save(food: food)
         }
-        
-        if(buscar) {
-            
-            if let savedData = userDefaults.data(forKey: "person") {
-                do {
-                    let decoder = JSONDecoder()
-                    let loadedPerson = try decoder.decode(Person.self, from: savedData)
-                    print("Nome: \(loadedPerson.name), Idade: \(loadedPerson.age)")
-                } catch {
-                    print("Erro ao decodificar a struct: \(error.localizedDescription)")
-                }
-            }else {
-                print("sEM DADOS!!")
-            }
-        }
-        
-
-//        let person = Person(name: "João", age: 30)
-//        let encoder = JSONEncoder()
-//        do {
-//            let data = try encoder.encode(person)
-//            userDefaults.set(data, forKey: "person")
-//            print("Criando....")
-//        } catch {
-//            print(error)
-//        }
     }
-    
+        
     func didTapSelectImage() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -158,7 +130,6 @@ extension AddCookingView: ViewCode {
             buttonSubmitView.topAnchor.constraint(equalTo: containerImagePicker.bottomAnchor, constant: 16),
             buttonSubmitView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             buttonSubmitView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
         ])
     }
     

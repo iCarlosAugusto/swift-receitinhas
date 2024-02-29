@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0735C8402B880AF900B3F9C0 /* CookingLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735C83F2B880AF900B3F9C0 /* CookingLocalStorage.swift */; };
 		076C01612B7EF0B500AD4CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C01602B7EF0B500AD4CC3 /* AppDelegate.swift */; };
 		076C01632B7EF0B500AD4CC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C01622B7EF0B500AD4CC3 /* SceneDelegate.swift */; };
 		076C01652B7EF0B500AD4CC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C01642B7EF0B500AD4CC3 /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		076C01772B7EF22200AD4CC3 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C01762B7EF22200AD4CC3 /* ViewCode.swift */; };
 		076C017A2B7EFE7A00AD4CC3 /* AddCookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C01792B7EFE7A00AD4CC3 /* AddCookingView.swift */; };
 		076C017D2B7FA41800AD4CC3 /* ContainerImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C017C2B7FA41800AD4CC3 /* ContainerImagePicker.swift */; };
+		0788D0BB2B875F6700D80ACC /* FoodRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788D0BA2B875F6700D80ACC /* FoodRecipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0735C83F2B880AF900B3F9C0 /* CookingLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingLocalStorage.swift; sourceTree = "<group>"; };
 		076C015D2B7EF0B500AD4CC3 /* receitinhas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = receitinhas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076C01602B7EF0B500AD4CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076C01622B7EF0B500AD4CC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		076C01762B7EF22200AD4CC3 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		076C01792B7EFE7A00AD4CC3 /* AddCookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCookingView.swift; sourceTree = "<group>"; };
 		076C017C2B7FA41800AD4CC3 /* ContainerImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerImagePicker.swift; sourceTree = "<group>"; };
+		0788D0BA2B875F6700D80ACC /* FoodRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0735C83E2B880AE900B3F9C0 /* localstorage */ = {
+			isa = PBXGroup;
+			children = (
+				0735C83F2B880AF900B3F9C0 /* CookingLocalStorage.swift */,
+			);
+			path = localstorage;
+			sourceTree = "<group>";
+		};
 		076C01542B7EF0B500AD4CC3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +74,7 @@
 		076C015F2B7EF0B500AD4CC3 /* receitinhas */ = {
 			isa = PBXGroup;
 			children = (
+				0735C83E2B880AE900B3F9C0 /* localstorage */,
 				0788D0B92B875E4E00D80ACC /* model */,
 				076C017B2B7FA3FF00AD4CC3 /* components */,
 				076C01782B7EFE6400AD4CC3 /* Views */,
@@ -112,6 +125,7 @@
 		0788D0B92B875E4E00D80ACC /* model */ = {
 			isa = PBXGroup;
 			children = (
+				0788D0BA2B875F6700D80ACC /* FoodRecipe.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -189,9 +203,11 @@
 			files = (
 				076C01652B7EF0B500AD4CC3 /* ViewController.swift in Sources */,
 				076C01612B7EF0B500AD4CC3 /* AppDelegate.swift in Sources */,
+				0788D0BB2B875F6700D80ACC /* FoodRecipe.swift in Sources */,
 				076C01632B7EF0B500AD4CC3 /* SceneDelegate.swift in Sources */,
 				076C017D2B7FA41800AD4CC3 /* ContainerImagePicker.swift in Sources */,
 				076C017A2B7EFE7A00AD4CC3 /* AddCookingView.swift in Sources */,
+				0735C8402B880AF900B3F9C0 /* CookingLocalStorage.swift in Sources */,
 				076C01772B7EF22200AD4CC3 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

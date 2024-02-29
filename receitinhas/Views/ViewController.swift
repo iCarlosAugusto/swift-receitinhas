@@ -27,13 +27,21 @@ class ViewController: UIViewController {
         return table;
     }()
     
+    var cookings: [FoodRecipe] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
-
         setNavigationBar()
+        getCookings()
+    }
+    
+    func getCookings() {
+        if let cookings = CookingLocalStorage.get() {
+            self.cookings = cookings
+            tableView.reloadData()
+        };
     }
     
     func setNavigationBar() {
@@ -47,7 +55,6 @@ class ViewController: UIViewController {
      @objc func createNewCooking() {
          let vc = AddCookingView();
          present(vc, animated: true)
-         //self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -76,13 +83,14 @@ extension ViewController: ViewCode {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+        return cookings.count;
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cook = cookings[indexPath.row];
         let cell = UITableViewCell();
-        cell.textLabel?.text = "Teste"
+        cell.textLabel?.text = cook.name
         return cell;
     }
 }
