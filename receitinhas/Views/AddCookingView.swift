@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 
+protocol AddCookingViewDelegate {
+    func didCreateNewCooking(food: FoodRecipe)
+}
+
 class AddCookingView: UIViewController, ContainerImagePickerDelegate {
     
     let userDefaults = UserDefaults.standard;
+    var delegate: AddCookingViewDelegate?;
     
     private lazy var titleView: UILabel = {
         let title = UILabel()
@@ -73,6 +78,8 @@ class AddCookingView: UIViewController, ContainerImagePickerDelegate {
         if let title = titleTextfieldView.text, let description = descriptionTextfieldView.text {
             let food = FoodRecipe(name: title, description: description, photo: "1")
             CookingLocalStorage.save(food: food)
+            delegate?.didCreateNewCooking(food: food);
+            dismiss(animated: true);
         }
     }
         

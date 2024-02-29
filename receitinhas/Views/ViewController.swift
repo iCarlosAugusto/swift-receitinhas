@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, AddCookingViewDelegate {
     private lazy var titleView: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false;
@@ -27,10 +26,18 @@ class ViewController: UIViewController {
         return table;
     }()
     
+    let addCookingView = AddCookingView()
+    
     var cookings: [FoodRecipe] = []
+    
+    func didCreateNewCooking(food: FoodRecipe) {
+        cookings.append(food);
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addCookingView.delegate = self
         view.backgroundColor = .white
         setupUI()
         setNavigationBar()
@@ -53,8 +60,7 @@ class ViewController: UIViewController {
     }
     
      @objc func createNewCooking() {
-         let vc = AddCookingView();
-         present(vc, animated: true)
+         present(addCookingView, animated: true)
     }
 }
 
